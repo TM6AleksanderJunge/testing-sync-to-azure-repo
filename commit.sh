@@ -1,4 +1,4 @@
-AZUREPAT=$AZUREPAT
+AZPAT=$AZPAT
 AZUSERNAME=$AZUSERNAME
 AZUSER_EMAIL=$AZUSER_EMAIL
 AZORG=$AZORG
@@ -10,7 +10,7 @@ AZREPO=$AZREPO
 rm -rf .git
 cd ..
 rm -rf $AZREPO
-GIT_CMD_REPOSITORY="https://$AZUSERNAME:$AZUREPAT@dev.azure.com/$AZORG/syncing-test/_git/$AZREPO"
+GIT_CMD_REPOSITORY="https://$AZUSERNAME:$AZPAT@dev.azure.com/$AZORG/syncing-test/_git/$AZREPO"
 git clone $GIT_CMD_REPOSITORY
 
 cp -r testing-sync-to-azure-repo/* $AZREPO/
