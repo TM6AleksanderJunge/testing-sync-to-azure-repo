@@ -14,8 +14,8 @@ AZREPO=$AZREPO
 
 #cd $AZREPO
 
-#git config --global user.email "$AZUSER_EMAIL"
-#git config --global user.name "$AZUSERNAME"
+git config --global user.email "$AZUSER_EMAIL"
+git config --global user.name "$AZUSERNAME"
 
 git remote set-url --add --push origin https://$AZUSERNAME:$AZPAT@dev.azure.com/$AZORG/syncing-test/_git/$AZREPO
 
