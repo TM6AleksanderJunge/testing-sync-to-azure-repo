@@ -24,4 +24,4 @@ git fetch --unshallow origin
 git add .
 git commit -m "sync from git to azure"
 
-git push origin syncing-branch:arrival-branch
+git push origin syncing-branch:arrival-branch --force
