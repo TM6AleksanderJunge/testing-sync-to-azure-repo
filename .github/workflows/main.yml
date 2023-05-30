@@ -13,7 +13,12 @@ jobs:
         AZUSERNAME: "s223125"
         AZUSER_EMAIL: "s223125@dtu.dk"
         AZORG: "s223125"
-      run: |
-         chmod +x ./commit.sh
-         ./commit.sh
       shell: bash
+      run: |
+         git config --global user.email "$AZUSER_EMAIL"
+         git config --global user.name "$AZUSERNAME"
+         git remote set-url --add --push origin https://$AZUSERNAME:$AZPAT@dev.azure.com/$AZORG/syncing-test/_git/$AZREPO
+         git fetch --unshallow origin
+         git add .
+         git commit -m "sync from git to azure"
+         git push origin syncing-branch:arrival-branch --force
