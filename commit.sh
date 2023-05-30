@@ -19,6 +19,8 @@ AZREPO=$AZREPO
 
 git remote set-url --add --push origin https://$AZUSERNAME:$AZPAT@dev.azure.com/$AZORG/syncing-test/_git/$AZREPO
 
+git fetch --unshallow origin
+
 git add .
 git commit -m "sync from git to azure"
 
