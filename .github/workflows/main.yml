@@ -1,12 +1,12 @@
 name: Push directory to another repository
 on: push
 jobs:
-  check-bats-version:
+  sync-to-azure:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/syncing-branch'
     steps:
     - uses: actions/checkout@v2
-    - name: Run script file
+    - name: sync to azure
       env:
         AZREPO: "AzureRepos-syncing"
         AZPAT: ${{secrets.AZUREPAT}}
